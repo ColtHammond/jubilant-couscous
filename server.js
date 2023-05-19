@@ -49,7 +49,7 @@ app.listen(port, () => {
 	console.log(`Server running on port ${port}`);
 });
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/tracked-challenges'); // Replace 'mydatabase' with your database name
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/trackhawk'); // Replace 'mydatabase' with your database name
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 // Connect to the MongoDB database
