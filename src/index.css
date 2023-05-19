@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Advent+Pro&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Gruppo&display=swap');
 
-
 :root {
   --themeC: #7500ff;
   --clb: #7500ff21;
@@ -12,15 +11,13 @@
 #root {
   width: 100%;
   min-height: 100vh;
-  padding: 50px;
+  padding: 100px;
   backdrop-filter: blur(15px);
 }
 
 .centered {
   justify-content: center;
-  /* center items horizontally, in this case */
   align-items: center;
-  /* center items vertically, in this case */
   display: flex;
 }
 
@@ -36,18 +33,13 @@ a:hover {
 .sun {
   display: flex;
   justify-content: center;
-  /* center items horizontally, in this case */
   align-items: center;
-  /* center items vertically, in this case */
   border-radius: 50%;
-  height: 200px;
-  width: 200px;
-  right: 100px;
+  height: 400px;
+  width: 400px;
+  right: 200px;
   background: orange;
-  box-shadow: 0 0 10px orange,
-    0 0 60px orange,
-    0 0 200px yellow,
-    inset 0 0 80px yellow;
+  box-shadow: 0 0 20px orange, 0 0 120px orange, 0 0 400px yellow, inset 0 0 160px yellow;
   z-index: 12;
   z-index: -99;
 }
@@ -66,7 +58,7 @@ a:hover {
 }
 
 body {
-  font-family: 'Gruppo', cursive;
+  font-family: Georgia, serif;
   color: #ffffff;
   display: flex;
   align-items: center;
@@ -76,21 +68,17 @@ body {
   background-image: url('./assets/task_tracker_bg.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
-  /* background-size: 250vh 100vh; */
 }
 
 .container {
   position: relative;
-  width: 500px;
-  margin: 1px auto;
-  /* overflow: auto; */
-  min-height: 500px;
-  border: 1px solid #000000;
-  padding-bottom: 60px;
-  /* padding: 20px 30px; */
-  /* border-radius: 5px; */
+  width: 800px;
+  margin: 2px auto;
+  min-height: 800px;
+  border: 2px solid #000000;
+  padding-bottom: 120px;
   background-color: var(--black);
-  backdrop-filter: blur(50px);
+  backdrop-filter: blur(100px);
   user-select: none;
 }
 
@@ -99,30 +87,30 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 85px;
-  padding: 20px 30px;
+  height: 170px;
+  padding: 40px 60px;
 }
 
 h1,
 h4 {
   font-weight: 500;
+  font-size: 40px;
 }
 
 h4 {
-  font-size: 15px;
+  font-size: 30px;
 }
 
 .btn {
   background: #000;
-  width: 45px;
-  height: 45px;
-
+  width: 70px;
+  height: 70px;
   color: #fff;
   border: none;
   border-radius: 50%;
   cursor: pointer;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 30px;
   font-family: inherit;
 }
 
@@ -137,14 +125,14 @@ h4 {
 .btn-block {
   background: var(--black);
   width: 100%;
-  height: 60px;
-  font-size: 18px;
+  height: 90px;
+  font-size: 30px;
   border-radius: 0px;
   transition: 0.2s ease;
 }
 
 .taskAddBtn:hover {
-  opacity: .5;
+  opacity: 0.5;
 }
 
 .btn-block:hover {
@@ -152,14 +140,14 @@ h4 {
 }
 
 .noTask {
-  margin: 40px 0 20px;
+  margin: 80px 0 40px;
   text-align: center;
+  font-size: 40px;
 }
 
 .task {
-  /* background: #ff000031; */
-  margin: 30px;
-  height: 70px;
+  margin: 60px;
+  height: 140px;
   cursor: pointer;
   transition: 0.2s ease-in-out;
 }
@@ -173,7 +161,7 @@ h4 {
 }
 
 .task.reminder {
-  border-left: 5px solid var(--themeC);
+  border-left: 10px solid var(--themeC);
 }
 
 .task.reminder h3 {
@@ -184,29 +172,31 @@ h4 {
   flex-direction: column;
   align-items: flex-start;
   background: var(--black);
-  width: calc(100% - 70px);
+  width: calc(100% - 140px);
   height: 100%;
-  padding: 8px 15px;
+  padding: 16px 30px;
 }
 
 .task h3 {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-size: 40px;
 }
 
 .task_content>p {
-  margin-top: 7px;
+  margin-top: 14px;
   text-align: left;
   font-style: italic;
+  font-size: 30px;
 }
 
 .task_clsBtn {
   background: var(--clb);
   color: var(--themeC);
-  width: 70px;
+  width: 140px;
   height: 100%;
-  font-size: 18px;
+  font-size: 40px;
   transition: 0.2s ease;
 }
 
@@ -217,30 +207,29 @@ h4 {
 .add-form {
   background: rgb(0, 0, 0);
   background: linear-gradient(180deg, #2705ff1f 0%, #0000 100%);
-  padding: 20px 30px;
+  padding: 40px 60px;
 }
 
 .form-control {
-  margin: 20px 0 30px;
+  margin: 40px 0 60px;
 }
 
 .form-control label {
   display: block;
-  font-size: 19px;
+  font-size: 38px;
 }
 
 .form-control input {
   background: transparent;
   width: 100%;
-  height: 40px;
-  margin-top: 5px;
-  /* padding: 3px 7px; */
+  height: 60px;
+  margin-top: 10px;
   color: #ffffff;
-  font-size: 17px;
+  font-size: 34px;
   font-family: inherit;
   border: 0;
   outline: 0;
-  border-bottom: 1px solid #000000;
+  border-bottom: 2px solid #000000;
 }
 
 .form-control-check {
@@ -251,11 +240,12 @@ h4 {
 
 .form-control-check label {
   flex: 1;
+  font-size: 38px;
 }
 
 .form-control-check input {
   flex: 2;
-  height: 20px;
+  height: 30px;
 }
 
 .footer {
@@ -264,15 +254,14 @@ h4 {
   align-items: flex-start;
   position: absolute;
   bottom: 0px;
-  height: 30px;
-  padding: 30px;
-  font-size: 12px;
+  height: 60px;
+  padding: 60px;
+  font-size: 24px;
   text-align: center;
 }
 
 .link {
-  /* color: var(--themeC); */
-  font-size: 12px;
+  font-size: 24px;
   transition: 0.2s ease;
 }
 
@@ -281,7 +270,7 @@ h4 {
 }
 
 .about_con {
-  padding: 30px;
-  font-size: 18px;
-  line-height: 20px;
+  padding: 60px;
+  font-size: 36px;
+  line-height: 40px;
 }
