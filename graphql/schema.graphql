@@ -1,0 +1,51 @@
+const Task = require('./task.js'); // Import the Task model or adjust the import path based on your file structure
+
+const resolvers = {
+  Query: {
+    getTask: async ({ id }) => {
+      try {
+        const task = await Task.findById(id);
+        return task;
+      } catch (error) {
+        throw new Error('Failed to fetch the task');
+      }
+    },
+    getAllTasks: async () => {
+      try {
+        const tasks = await Task.find();
+        return tasks;
+      } catch (error) {
+        throw new Error('Failed to fetch all tasks');
+      }
+    },
+  },
+  Mutation: {
+    createTask: async ({ name, date, time }) => {
+      try {
+        const task = new Task({ name, date, time });
+        const createdTask = await task.save();
+        return createdTask;
+      } catch (error) {
+        throw new Error('Failed to create a new task');
+      }
+    },
+    updateTask: async ({ id, name, date, time }) => {
+      try {
+        const updatedTask = await Task.findByIdAndUpdate(id, { name, date, time }, { new: true });
+        return updatedTask;
+      } catch (error) {
+        throw new Error('Failed to update the task');
+      }
+    },
+    deleteTask: async ({ id }) => {
+      try {
+        const deletedTask = await Task.findByIdAndDelete(id);
+        return deletedTask ? true : false;
+      } catch (error) {
+        throw new Error('Failed to delete the task');
+      }
+    },
+  },
+};
+
+module.exports = resolvers;
